@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
+import { generateCarImageUrl } from "@/utils";
 interface CarDetailsProps {
   isOpen: boolean;
   car: CarProps;
@@ -57,7 +58,7 @@ const CarDetails = ({ car, isOpen, closeModal }: CarDetailsProps) => {
                     <div className="relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg">
                       {/* Main image */}
                       <Image
-                        src="/hero.png"
+                        src={generateCarImageUrl(car)}
                         alt="car modal "
                         priority
                         fill
@@ -69,7 +70,7 @@ const CarDetails = ({ car, isOpen, closeModal }: CarDetailsProps) => {
                       {/* For small images */}
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src="/hero.png"
+                          src={generateCarImageUrl(car, "29")}
                           alt="car modal "
                           priority
                           fill
@@ -79,7 +80,7 @@ const CarDetails = ({ car, isOpen, closeModal }: CarDetailsProps) => {
 
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src="/hero.png"
+                          src={generateCarImageUrl(car, "33")}
                           alt="car modal "
                           priority
                           fill
@@ -89,7 +90,7 @@ const CarDetails = ({ car, isOpen, closeModal }: CarDetailsProps) => {
 
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src="/hero.png"
+                          src={generateCarImageUrl(car, "13")}
                           alt="car modal "
                           priority
                           fill
