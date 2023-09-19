@@ -43,7 +43,9 @@ const SearchBar = () => {
       searchParams.set("model", model);
     } else searchParams.delete("model");
 
-    const newPathname = `${window.location.pathname}${searchParams.toString()}`;
+    const newPathname = `${
+      window.location.pathname
+    }?${searchParams.toString()}`;
 
     router.push(newPathname);
   };
